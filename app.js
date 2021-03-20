@@ -8,6 +8,7 @@ const port = 3000;
 var Datastore = require('nedb'),
         userDb = new Datastore({ filename: './data/user.db', autoload: true });
 
+//init//
 
 app.use(express.static('public'));                         app.use('/css', express.static(__dirname + 'public/css'));
 app.use('/js', express.static(__dirname + 'public/js'));
@@ -19,6 +20,8 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({extended:false}));
 app.get("",(req,res) =>{                                   res.render("index",{text:"this ejs"});
 });
+
+//routes//
 
 app.get("/index",(req,res) =>{
         res.render("index",{text:"this ejs"});             
