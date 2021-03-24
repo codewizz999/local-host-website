@@ -52,31 +52,30 @@ app.get('/register', (req, res) => {
 //saves login details of our yours from register.ejs form to  the database
 app.post("/register",async(req, res) =>{
 
-        try{        
-      Const doc=[{
-                   name:req.body.name,                                                const doc =[{name:req.body.name,
+        try{                                                       
+const doc =[{name:req.body.name,
                   email:req.body.email,
                password:req.body.password }];
 
 
                 users.push(doc);                           
-                                                           res.redirect("/login");                                            }catch{                                           r
-res.redirect("/login");                                            }catch{                                           res.redirect("/register");
+                                                           
+res.redirect("/login");                                            
+                                            
+}catch{                                           
+res.redirect("/register");
        }catch{
 
 es.redirect("/register");
-        }
-                                                                                                                      userDb.insert(users, function (err, newDoc)
+       }
  userDb.insert(users, function (err, newDoc){
 
         console.log(users);
-                                                                                                                                      });
+                                                                                                                                      
+});
 
-});                                                                                                                   app.listen(port , () => console.log("listening http://locah
+});                                                                                                                   
+app.listen(port , () => console.log("listening http://localhost:3000")
 });
 
 
-
-
-app.listen(port , () => console.log("listening http://locah
-ost:"+ port));
