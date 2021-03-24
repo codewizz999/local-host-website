@@ -1,1 +1,63 @@
 
+<html lang="en">                                           <head>                                                       <meta charset="UTF-8">                                     <meta http-equiv="X-UA-Compatible" content="IE=Edge">      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>login</title>
+
+  <!-- HTML -->
+
+  <!-- Custom Styles -->                                     <style>                                                    *{                                                         background-color:#ddd;                                     margin:0; padding:0;                                       }                                                          form{
+  width:320px;
+  background:#3e3d3d;
+  padding:40px 20px;                                         border-sizing:border-box;
+  position:fixed;                                            left:19.50%;                                               top:30%;                                                   transform:translate(-50px, -50px);                         }                                                          h1{
+  background-color:#3e3d3d;
+  color:white;
+  text-align:center;
+  font-family:san-serif;
+  margin-bottom:20px;
+  }
+  input{
+  width:100%;
+  background:none;
+  boder:1px solide white;
+  padding:6px 20px;
+  box-sizing:border-box;
+  margin-bottom:20px;
+  font-size:16pt;
+
+  }
+  #button{
+background-color:darkorange;
+cursor:pointer;
+color:black;
+border:none;
+  }
+   #button : hover{
+  background-color:orange;
+transition:.6s;
+  }
+p {                                                      
+color:white;
+background:#3e3d3d;                                          
+}                                                          
+a {                                                      
+color:red;                                                 
+background:#3e3d3d;                                          
+}                                                           
+</style>                                                
+</head>
+                                                           
+<body>                                                     
+<div id="form">                                            
+<form method="post" action="/login">                                                       
+<h1>login</h1>                                                                          
+<input type="text" name="email" placeholder="Email">
+<input type="password" name="password" place
+holder="Password">
+  <input id="button"type="submit" value="Submit"></input>    
+<p> No account                                             
+<a href="/register">Sign up</a></p>                        
+</form>                                                                                                                                                                          
+</div>                                                   
+</body>                                                    
+</html>
