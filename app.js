@@ -1,24 +1,32 @@
+//initiate express.
+
 const express = require("express");
-
 const app = express();
-
 const port = 3000;
 
-                                                           
+//loads nedb database for users                                                   
 var Datastore = require('nedb'),
-        userDb = new Datastore({ filename: './data/user.db', autoload: true });
+userDb = new Datastore({ filename: './data/user.db', autoload: true });
 
-//init//
+//init
+//serve static files images css and js
 
 app.use(express.static('public'));                         app.use('/css', express.static(__dirname + 'public/css'));
 app.use('/js', express.static(__dirname + 'public/js'));
 app.use('/images', express.static(__dirname + 'public/imsges'));
 
+//our template engine
+
 app.set("views","./views"); 
-                               
-app.set("view engine", "ejs");  
+app.set("view engine", "ejs"); 
+ 
+//Express urlencoded to help nodejs recognize 
+//tags and elements for our form
+
 app.use(express.urlencoded({extended:false}));
-app.get("",(req,res) =>{                                   res.render("index",{text:"this ejs"});
+
+app.get("",(req,res) =>{   
+res.render("index",{text:"this ejs"});
 });
 
 //routes//
@@ -41,6 +49,7 @@ app.get('/register', (req, res) => {
   res.render('register.ejs');
 });
 
+//saves login details of our yours from register.ejs form to  the database
 app.post("/register",async(req, res) =>{
 
         try{        
