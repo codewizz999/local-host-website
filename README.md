@@ -22,6 +22,9 @@ Create in home directory views
 ( template engine for ejs will be severed )
 
 
+Succesfully  set up
+http://Localhost:3000/register
+
 Tasks📋🛠
 1). File structure and folders.✔
 2). Get and post pages with express.✔
